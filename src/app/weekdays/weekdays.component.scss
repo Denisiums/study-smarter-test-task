@@ -49,7 +49,9 @@ $border-secondary-color: transparent;
   }
 
   &--current {
-    border-style: solid;
+    &:after {
+      background: $border-primary-color;
+    }
   }
   &__text {
 
