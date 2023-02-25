@@ -1,3 +1,54 @@
+$border-width: 3px;
+$border-primary-color: #ffffff;
+$border-secondary-color: transparent;
+
 .weekdays {
+  background: linear-gradient(90deg, #1e8cc8 0%, #00dcb4 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  &__day {
+    margin: 1%;
+    flex: 0 0 auto;
+  }
+}
+
+.week-day {
+  margin: 1%;
+  color: white;
+  font-size: clamp(4rem, 5vw, 10rem);
+  width: 11.2%;
+  aspect-ratio: 1;
+  position: relative;
+  &:after {
+    content: '';
+    border-radius: 999px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: repeating-conic-gradient(
+        $border-primary-color 0deg 15deg, $border-secondary-color 15deg 30deg
+    );
+    mask: radial-gradient(
+        circle farthest-side,
+        transparent calc(100% - #{$border-width}),
+        black calc(100% - (#{$border-width} - 1px)) // 1px for better smoothness
+    );
+  }
+
+  &--current {
+    border-style: solid;
+  }
+  &__text {
+
+  }
 
 }

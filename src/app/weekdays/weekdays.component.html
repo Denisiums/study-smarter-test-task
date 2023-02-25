@@ -1,3 +1,8 @@
 <div class="weekdays">
-
+  <div
+    *ngFor="let day of weekDays"
+    class="weekdays__day week-day"
+    [class.week-day--current]="day === currentDay">
+      <span class="week-day__text">{{daysText[day]}}</span>
+  </div>
 </div>
