@@ -1,32 +1,36 @@
-$border-width: 3px;
+$border-width: 4px;
 $border-primary-color: #ffffff;
 $border-secondary-color: transparent;
 
 .weekdays {
   background: linear-gradient(90deg, #1e8cc8 0%, #00dcb4 100%);
+  padding: 3% 0;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: center;
   align-items: center;
   &__day {
-    margin: 1%;
+    margin: 0 1%;
     flex: 0 0 auto;
   }
 }
 
 .week-day {
-  margin: 1%;
   color: white;
-  font-size: clamp(4rem, 5vw, 10rem);
-  width: 11.2%;
+  font-size: clamp(1rem, 4vw, 10rem);
+  width: 12%;
   aspect-ratio: 1;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   &:after {
     content: '';
-    border-radius: 999px;
+    border-radius: 9999px;
     display: block;
     position: absolute;
     top: 0;
