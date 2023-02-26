@@ -17,7 +17,6 @@ $border-secondary-color: transparent;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-content: center;
   align-items: center;
   &__day {
     margin: 0 1%;
@@ -32,7 +31,6 @@ $border-secondary-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
   // There could be just a "dash" border, but it'd be way to far from the design.
   // In case of "normal" task flow I'd try to convince to use default borders to save efforts.
   // We also can use SVG background as an alternative
@@ -57,9 +55,32 @@ $border-secondary-color: transparent;
       background: $border-primary-color;
     }
   }
+
   &__text {
-    color: white;
-    font-size: clamp(0.5rem, 4vw, 10rem);
+    fill: white;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .weekdays {
+    border-radius: 30px;
+  }
+  .week-day {
+    &:after {
+      @include borderGradientMask(6px);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .weekdays {
+    border-radius: 10px;
+  }
+  .week-day {
+    &:after {
+      @include borderGradientMask(3px);
+    }
   }
 }
 

@@ -3,6 +3,11 @@
     *ngFor="let day of weekDays"
     class="weekdays__day week-day"
     [class.week-day--current]="day === currentDay">
-      <span class="week-day__text">{{daysText[day]}}</span>
+    <!-- To have scaling we can either use vw, js or svg. Svg looks more flexible here -->
+    <svg class="week-day__text" viewBox="0 0 50 50">
+      <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle">
+        {{daysText[day]}}
+      </text>
+    </svg>
   </div>
 </div>
