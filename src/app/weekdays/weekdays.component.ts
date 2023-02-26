@@ -23,7 +23,7 @@ export class WeekdaysComponent implements OnInit {
 
 
   ngOnInit() {
-    // we consider there is no requirement to keep the weekday fresh after page load
+    // we suppose there is no requirement to keep the weekday fresh after page load
     this.setCurrentDay();
   }
 
