@@ -10,6 +10,6 @@ The solution does not support IE11.
 
 ## How to run
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm install`. Then run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
