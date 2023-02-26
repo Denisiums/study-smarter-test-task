@@ -31,34 +31,24 @@ $border-secondary-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  // There could be just a "dash" border, but it'd be way to far from the design.
-  // In case of "normal" task flow I'd try to convince to use default borders to save efforts.
-  // We also can use SVG background as an alternative
-  &:after {
-    content: '';
-    border-radius: 9999px;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 999;
-    background: repeating-conic-gradient(
-        $border-primary-color 0deg 15deg, $border-secondary-color 15deg 30deg
-    );
-    @include borderGradientMask(4px);
-  }
 
-  &--current {
-    &:after {
-      background: $border-primary-color;
-    }
+  &__shape {
+    width: 100%;
   }
 
   &__text {
     fill: white;
-    width: 100%;
+    font-size: 36px; // font size is relative to view port
+  }
+
+  &__border {
+    fill: transparent;
+    stroke: white;
+    stroke-dasharray: 12;
+    stroke-dashoffset: 2;
+    &--highlighted {
+      stroke-dasharray: none;
+    }
   }
 }
 
@@ -66,42 +56,22 @@ $border-secondary-color: transparent;
   .weekdays {
     border-radius: 30px;
   }
-  .week-day {
-    &:after {
-      @include borderGradientMask(6px);
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {
   .weekdays {
     border-radius: 10px;
   }
-  .week-day {
-    &:after {
-      @include borderGradientMask(3px);
-    }
-  }
-}
+ }
 
 @media screen and (max-width: 768px) {
   .weekdays {
     border-radius: 10px;
-  }
-  .week-day {
-    &:after {
-      @include borderGradientMask(3px);
-    }
   }
 }
 
 @media screen and (max-width: 449px) {
   .weekdays {
     border-radius: 5px;
-  }
-  .week-day {
-    &:after {
-      @include borderGradientMask(2px);
-    }
   }
 }

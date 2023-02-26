@@ -1,11 +1,15 @@
 <div class="weekdays">
   <div
     *ngFor="let day of weekDays"
-    class="weekdays__day week-day"
-    [class.week-day--current]="day === currentDay">
+    class="weekdays__day week-day">
     <!-- To have scaling we can either use vw, js or svg. Svg looks more flexible here -->
-    <svg class="week-day__text" viewBox="0 0 50 50">
-      <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle">
+    <svg class="week-day__shape" viewBox="0 0 100 100">
+      <circle
+        class="week-day__border"
+        [class.week-day__border--highlighted]="day === currentDay"
+        cx="50%" cy="50%" r="49%" stroke-width="2%"></circle>
+      <!-- y="53%" to visually center the text-->
+      <text class="week-day__text" x="50%" y="53%" dominant-baseline="middle" text-anchor="middle">
         {{daysText[day]}}
       </text>
     </svg>
